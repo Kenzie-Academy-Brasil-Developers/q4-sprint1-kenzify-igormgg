@@ -7,7 +7,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --experimental-specifier-resolution=node src/server.js"
+    "dev": "tsnd --files --respawn --rs --ignore-watch node_modules src/server.ts --clear --watch ./**"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
