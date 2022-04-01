@@ -12,7 +12,8 @@ const deleteSongController = (req, res) => {
     const artistPlaylist = user === null || user === void 0 ? void 0 : user.playlist[artist];
     const foundSong = artistPlaylist.find((music) => music.title === capitalizedSong);
     if (foundSong) {
-        artistPlaylist.pop(foundSong);
+        const songIndex = artistPlaylist.indexOf(foundSong);
+        artistPlaylist.splice(songIndex, 1);
         res.status(204).json('');
     }
     else {

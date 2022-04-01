@@ -26,7 +26,8 @@ const deleteSongController = (req: any, res: Response) => {
   );
 
   if (foundSong) {
-    artistPlaylist.pop(foundSong);
+    const songIndex: number = artistPlaylist.indexOf(foundSong);
+    artistPlaylist.splice(songIndex, 1);
 
     res.status(204).json('');
   } else {
